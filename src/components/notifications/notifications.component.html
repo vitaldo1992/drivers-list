@@ -1,0 +1,8 @@
+<div class='notifications'>
+  <div class='message message--danger' ng-if='notification.type === "error"'>
+    {{notification.text}}
+  </div>
+  <div class='message message--success' ng-if='notification.type === "success"'>
+    {{notification.text}}
+  </div>
+</div>

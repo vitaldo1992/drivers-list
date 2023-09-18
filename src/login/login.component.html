@@ -1,0 +1,62 @@
+<div class='layout login-page'>
+  <notifications></notifications>
+  <ng-form class='form card' name='login'>
+    <h3 class='form__head'>
+      Login
+    </h3>
+    <label class='input'>
+      Username*
+      <input class='input__field'
+             type='text'
+             name='userName'
+             ng-model='vm.login.userName'
+             ng-required='true'>
+      <span class='input__error' ng-if='login.userName.$error.required && login.userName.$touched'>
+      Field is required
+    </span>
+    </label>
+    <label class='input'>
+      Password*
+      <input class='input__field'
+             type='password'
+             name='password'
+             ng-model='vm.login.password'
+             ng-pattern='vm.passwordRegex'
+             ng-required='true'>
+      <span class='error' ng-if='login.password.$invalid && login.password.$error.pattern'>
+      Password should contain minimum 8 characters and minimum 1 letter and 1 number
+    </span>
+      <span class='input__error' ng-if='login.password.$error.required && login.password.$touched'>
+      Field is required
+    </span>
+    </label>
+    <div class='form__footer'>
+      <div>
+        <div>Admin:</div>
+        <div>
+          Login: <code>Vital1992</code>
+        </div>
+        <div>
+          Password: <code>1111111a</code>
+        </div>
+      </div>
+      <div>
+        <div>Driver:</div>
+        <div>
+          Login: <code>Olena1994</code>
+        </div>
+        <div>
+          Password: <code>1111111a</code>
+        </div>
+      </div>
+    </div>
+    <div class='form__footer'>
+      <button class='button' style='margin-left: auto;' ng-click='vm.logIn(vm.login)'
+              ng-disabled='login.$invalid'>Login
+      </button>
+    </div>
+  </ng-form>
+</div>
+
+
+

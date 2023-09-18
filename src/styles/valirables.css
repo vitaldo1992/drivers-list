@@ -1,0 +1,23 @@
+:root {
+    /* colors */
+    --body: #EEF0F8;
+    --primary: #f4f5f8;
+    --filed: #f3f6f9;
+    --white: #ffffff;
+    --pale: #F3F6F9;
+    --active: #eff0f4;
+    --blue: #2e8ff0;
+    --blue-dark: #2E8FF029;
+    --danger: #ef7da0;
+    --danger-dark: #EF7DA05C;
+    --success: #66bb6a;
+    --success-dark: #4CAF505C;
+    --text: #3F4254;
+    --field-text: #67697c;
+    --gray-text: #A4A4B5;
+    --black: #523F690D;
+
+    /* sizes */
+    --base-font: normal normal normal 13px/16px Helvetica;
+    --lg-font: normal normal bold 16px/19px Helvetica;
+}

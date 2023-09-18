@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-strict-di="true" class="has-background-primary-light">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="favicon.ico" />
+    <title>AngularJS-Webpack</title>
+    <link
+      href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <body>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <section
+      ng-if="!bootstrapped"
+      class="
+        has-background-primary
+        is-overlay
+        is-clipped
+        is-flex
+        is-flex-direction-column
+        is-justify-content-center
+        is-align-items-center
+      "
+    >
+      <div class="lds-ripple">
+        <div></div>
+        <div></div>
+      </div>
+    </section>
+
+    <div ui-view class="ng-cloak entrance" ng-if="bootstrapped"></div>
+  </body>
+</html>

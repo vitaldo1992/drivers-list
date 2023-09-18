@@ -1,0 +1,33 @@
+<div class='layout'>
+  <notifications></notifications>
+  <div class='grid'>
+    <div class='grid__col grid__col--actions'>
+      <a ui-sref='home' class='button'>Go Back</a>
+      <a class="button" ui-sref='create'>Create User</a>
+    </div>
+    <div class='grid__col'>
+    </div>
+    <div class='grid__col table card'>
+      <div class='table__row table__row--head row'>
+        <div class='row__col row__col--1'>
+          Username
+        </div>
+        <div class='row__col row__col--2'>
+          first name
+        </div>
+        <div class='row__col row__col--3'>
+          last name
+        </div>
+        <div class='row__col row__col--4'>
+          email
+        </div>
+        <div class='row__col row__col--5'>
+          type
+        </div>
+      </div>
+      <user-row ng-repeat="user in vm.users" user="user"></user-row>
+    </div>
+    <div class='grid__col' ui-view></div>
+  </div>
+</div>
+

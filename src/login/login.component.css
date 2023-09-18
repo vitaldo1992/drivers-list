@@ -1,0 +1,8 @@
+.login-page .form {
+    margin: auto;
+    width: 400px;
+}
+
+.login-page .form .form__footer {
+    margin-top: 40px;
+}

@@ -1,0 +1,39 @@
+﻿/* AngularJS ng-cloak */
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+  display: none !important;
+}
+
+/* This is the initial ui-view */
+.entrance {
+  animation: fadeIn 0.5s;
+}
+
+div[ui-view].ng-leave.entrance {
+  animation: none;
+}
+
+@keyframes transitionSlideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(25px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in-right-enter,
+.slide-in-right-enter-active {
+  animation: 350ms slideInRight ease-in-out;
+}
+
+div[ui-view].ng-enter:not(.entrance) {
+  animation: 350ms transitionSlideInRight ease-in-out;
+}

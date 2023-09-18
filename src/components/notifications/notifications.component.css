@@ -1,0 +1,29 @@
+.notifications {
+    display: flex;
+    justify-content: space-between;
+    --message-height: 56px;
+    height: var(--message-height);
+}
+
+.message {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 281px;
+    height: var(--message-height);
+    border-radius: 6px;
+    box-shadow: 0 10px 15px var(--black);
+    color: var(--white);
+    animation: fadeInDown 0.5s;
+}
+
+.message--danger {
+    background: var(--danger);
+    box-shadow: 0 10px 15px var(--danger-dark);
+}
+
+.message--success {
+    background: var(--success);
+    box-shadow: 0 10px 15px var(--success-dark);
+    margin-left: auto;
+}

@@ -1,0 +1,117 @@
+<ng-form class='form card' name='user'>
+  <div class='form__head'>
+    <h3 ng-if='!vm.createMode'>
+      {{vm.userInitials}}
+    </h3>
+    <h3 ng-if='vm.createMode'>
+      Create new user
+    </h3>
+    <a ui-sref='users-list' class='icon-close'></a>
+  </div>
+  <label class='input'>
+    Username*
+    <input class='input__field'
+           type='text'
+           name='userName'
+           ng-model='vm.user.userName'
+           ng-required='true'
+           ng-class='{invalid: vm.nameUniqueError}'>
+    <span class='input__error' ng-if='user.userName.$error.required && user.userName.$touched'>
+      Field is required
+    </span>
+  </label>
+  <label class='input'>
+    First name*
+    <input class='input__field'
+           type='text'
+           name='firstName'
+           ng-model='vm.user.firstName'
+           ng-required='true'>
+    <span class='input__error' ng-if='user.firstName.$error.required && user.firstName.$touched'>
+      Field is required
+    </span>
+  </label>
+  <label class='input'>
+    Last name*
+    <input class='input__field'
+           type='text'
+           name='lastName'
+           ng-model='vm.user.lastName'
+           ng-required='true'>
+    <span class='input__error' ng-if='user.lastName.$error.required && user.lastName.$touched'>
+      Field is required
+    </span>
+  </label>
+  <label class='input'>
+    Email*
+    <input class='input__field'
+           type='email'
+           name='email'
+           ng-model='vm.user.email'
+           placeholder='@'
+           ng-required='true'>
+    <span class='input__error' ng-if='user.email.$invalid && user.email.$touched'>
+      Email is invalid
+    </span>
+    <span class='input__error' ng-if='user.email.$error.required && user.email.$touched'>
+      Field is required
+    </span>
+  </label>
+  <label class='input'>
+    Type*
+    <select class='input__field'
+            name='type'
+            ng-model='vm.user.type'
+            ng-required='true'>
+      <option value='Admin'>Admin</option>
+      <option value='Driver'>Driver</option>
+    </select>
+    <span class='input__error' ng-if='user.password.$error.required && user.password.$touched'>
+      Field is required
+    </span>
+  </label>
+  <label class='input'>
+    Password*
+    <input class='input__field'
+           type='password'
+           name='password'
+           ng-model='vm.user.password'
+           ng-pattern='vm.passwordRegex'
+           ng-required='true'>
+    <span class='input__error' ng-if='user.password.$invalid && user.password.$error.pattern'>
+      Password should contain minimum 8 characters and minimum 1 letter and 1 number
+    </span>
+    <span class='input__error' ng-if='user.password.$error.required && user.password.$touched'>
+      Field is required
+    </span>
+  </label>
+  <label class='input'>
+    Repeat password*
+    <input class='input__field'
+           type='password'
+           name='repeatPassword'
+           ng-model='vm.user.repeatPassword'
+           ng-pattern='vm.passwordRegex'
+           ng-required='true'
+           repeat-password='vm.user.password'>
+    <span class='input__error' ng-if='user.repeatPassword.$invalid && user.repeatPassword.$error.pattern'>
+      Invalid
+    </span>
+    <span class='input__error' ng-if='user.repeatPassword.$error.required && user.repeatPassword.$touched'>
+      Password should contain minimum 8 characters and minimum 1 letter and 1 number
+    </span>
+    <span class='input__error' ng-if='user.repeatPassword.$error.repeatPassword'>
+      Passwords should be the same
+    </span>
+  </label>
+  <div class='form__footer'>
+    <button class='button' style='margin: auto;' ng-if='vm.createMode' ng-click='vm.createUser(vm.user)'
+            ng-disabled='user.$invalid'>Create
+    </button>
+    <button class='button button--danger' ng-if='!vm.createMode' ng-click='vm.deleteUser(vm.user.id)'>Delete</button>
+    <button class='button' ng-if='!vm.createMode' ng-click='vm.updateUser(vm.user)' ng-disabled='user.$invalid'>Update
+    </button>
+  </div>
+</ng-form>
+
+
